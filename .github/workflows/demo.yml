@@ -1,6 +1,10 @@
 name: second app
 
-on: push
+on:
+  workflow_run:
+    workflows: [ "first-app" ]
+    types:
+      - completed
 
 jobs:
   first_app:
