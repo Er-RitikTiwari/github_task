@@ -18,7 +18,7 @@ jobs:
 
       - name: running the app
         run: |
-           echo "app is running"
+           echo "app is runnning"
       
       # - name: Trigger Second Repository Pipeline
       #   run: |
