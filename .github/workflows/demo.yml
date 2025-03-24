@@ -2,9 +2,11 @@ name: second app
 
 on:
   workflow_run:
-    workflows: [ "first-app" ]
+    workflows: ["first-app"]
     types:
       - completed
+    branches:
+      - main
 
 jobs:
   first_app:
