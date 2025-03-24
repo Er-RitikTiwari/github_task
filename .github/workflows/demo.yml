@@ -18,8 +18,7 @@ jobs:
 
       - name: running the app
         run: |
-           npm run dev
-           echo "app isruning"
+           echo "app is running"
       
       # - name: Trigger Second Repository Pipeline
       #   run: |
