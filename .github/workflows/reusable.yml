@@ -27,10 +27,11 @@ jobs:
         run: |
           npm install
 
-      - name: Run tests
+      - name: testing the app
         run: |
           npm test
 
-      - name: Run the application
+      - name: Running the app
         run: |
+          nohup npm run dev > output.log 2>&1 &
           echo "app is running with node version ${{ inputs.node-version }}"
