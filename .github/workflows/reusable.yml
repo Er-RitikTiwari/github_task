@@ -1,4 +1,4 @@
-name: Reusable Node.js Workflow
+name: Reusable
 
 on:
   workflow_call:
