@@ -25,6 +25,6 @@ jobs:
 
       - name: running the app
         run: |
-           echo "app is runing"
+           echo "app is running"
       
       
