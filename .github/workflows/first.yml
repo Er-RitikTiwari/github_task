@@ -1,29 +1,13 @@
 name: first-app
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  first_app:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Run test
-        run: npm test
-
-      - name: running the app
-        run: |
-           echo "app is runnning"
-      
-      # - name: Trigger Second Repository Pipeline
-      #   run: |
-      #       curl -X POST -H "Accept: application/vnd.github+json" \
-      #       -H "Authorization: token ${{ secrets.APP2_WORKFLOW_TRIGGER_TOKEN }}" \
-      #       --data '{"event_type": "trigger_second_pipeline"}' \
-      #       https://api.github.com/repos/Er-RitikTiwari/git_app_2/dispatches
-      
+  build:
+    uses: Er-RitikTiwari/github_task/.github/workflows/reusable.yml@main
+    with:
+      app-directory: "app1"
+      node-version: "20"

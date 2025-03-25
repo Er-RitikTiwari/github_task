@@ -1,0 +1,39 @@
+name: Reusable Node.js Workflow
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+        default: "18"
+      app-directory:
+        required: true
+        type: string
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Install dependencies
+        run: |
+          cd ${{ inputs.app-directory }}
+          npm install
+
+      - name: Run tests
+        run: |
+          cd ${{ inputs.app-directory }}
+          npm test
+
+      - name: Run the application
+        run: |
+          cd ${{ inputs.app-directory }}
+          echo "app is running "
