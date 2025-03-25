@@ -9,5 +9,5 @@ jobs:
   build:
     uses: Er-RitikTiwari/github_task/.github/workflows/reusable.yml@main
     with:
-      app-directory: "app1"
-      node-version: "20"
+      app-directory: app1
+      node-version: 20
