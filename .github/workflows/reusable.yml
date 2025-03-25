@@ -33,5 +33,4 @@ jobs:
 
       - name: Running the app
         run: |
-          nohup npm run dev > output.log 2>&1 &
-        #   echo "app is running with node version ${{ inputs.node-version }}"
+          echo "app is running with node version ${{ inputs.node-version }}"
